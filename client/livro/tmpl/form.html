@@ -1,0 +1,30 @@
+<html lang="pt-BR">
+    <head>
+        <meta name="charset" content="UTF-8">
+        <title>Livraria</title>
+    </head>
+    <body>
+        <h1>Livraria</h1>
+        <form method="POST">
+            <fieldset>
+                <legend>Inserir um livro</legend>
+                <label for="isbn">ISBN:</label>
+                <input type="text" name="isbn">
+                <br>                
+                <label for="titulo">Titulo:</label>
+                <input type="text" name="titulo">
+                <br>
+                <label for="descricao">Descrição:</label>
+                <input type="text" name="descricao">
+                <br>
+                <label for="publicacao">Data de publicação</label>
+                <input type="datetime" name="publicacao">
+                <br>
+                <label for="preco">Preço</label>
+                <input type="number" step="0.01" name="preco">
+                <br>
+                <button type="submit">Salvar</button>
+            </fieldset>
+        </form>
+    </body>
+</html>
