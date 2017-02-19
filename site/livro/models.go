@@ -10,6 +10,6 @@ type Livro struct {
 	ISBN             string    `json:"isbn,omitempty"`
 	Titulo           string    `json:"titulo,omitempty"`
 	Descricao        string    `json:"descricao,omitempty"`
-	DataDePublicacao time.Time `json:"publicado,omitempty"`
+	DataDePublicacao time.Time `json:"data_publicao,omitempty"`
 	Preco            float64   `json:"preco,omitempty"`
 }
