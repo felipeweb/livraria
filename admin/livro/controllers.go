@@ -60,7 +60,7 @@ func parseLivroRequest(r *http.Request) (livro Livro, err error) {
 		}
 		livro.ID = id
 	}
-	if dataInput := r.FormValue("data_publicao"); dataInput != "" {
+	if dataInput := r.FormValue("data_publicacao"); dataInput != "" {
 		var data time.Time
 		data, err = time.Parse("2006-01-02", dataInput)
 		if err != nil {
