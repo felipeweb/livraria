@@ -39,7 +39,23 @@ func SaveBook(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
-	http.Redirect(w, r, "/insert", http.StatusFound)
+	http.Redirect(w, r, "/livro/list", http.StatusFound)
+}
+
+// ListBooks lista os livros
+func ListBooks(w http.ResponseWriter, r *http.Request) {
+	livro := Livro{}
+	livros, err := livro.List(db)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+	data := make(map[string]interface{})
+	data["Livros"] = livros
+	tmpl := template.Must(template.New("list.html").ParseFiles("livro/tmpl/list.html"))
+	if err := tmpl.Execute(w, data); err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+	}
 }
 
 func parseLivroRequest(r *http.Request) (livro Livro, err error) {

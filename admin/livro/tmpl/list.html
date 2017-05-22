@@ -1,0 +1,29 @@
+<html lang="pt-BR">
+    <head>
+        <meta name="charset" content="UTF-8">
+        <title>Livraria</title>
+    </head>
+    <body>
+        <h1>Lista de livros</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>ISBN</th>
+                    <th>Titulo</th>
+                    <th>Data de Publicação</th>
+                    <th>Preço</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{range .Livros}}
+                <tr>
+                    <td>{{.ISBN}}</td>
+                    <td>{{.Titulo}}</td>
+                    <td>{{.DataDePublicacao}}</td>
+                    <td>{{.Preco}}</td>
+                </tr>
+                {{end}}
+            </tbody>
+        </table>
+    </body>
+</html>
