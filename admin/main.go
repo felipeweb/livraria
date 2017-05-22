@@ -3,7 +3,7 @@ package main
 import (
 	"net/http"
 
-	"github.com/felipeweb/livraria/client/livro"
+	"github.com/felipeweb/livraria/admin/livro"
 	"github.com/gorilla/mux"
 )
 
