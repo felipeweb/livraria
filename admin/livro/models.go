@@ -33,18 +33,19 @@ func (l *Livro) List(db *sql.DB) (livros []Livro, err error) {
 		return
 	}
 	for rows.Next() {
+		var ll Livro
 		err = rows.Scan(
-			&l.ID,
-			&l.ISBN,
-			&l.Titulo,
-			&l.Descricao,
-			&l.DataDePublicacao,
-			&l.Preco,
+			&ll.ID,
+			&ll.ISBN,
+			&ll.Titulo,
+			&ll.Descricao,
+			&ll.DataDePublicacao,
+			&ll.Preco,
 		)
 		if err != nil {
 			return
 		}
-		livros = append(livros, *l)
+		livros = append(livros, ll)
 	}
 	return
 }
